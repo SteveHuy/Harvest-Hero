@@ -1,0 +1,36 @@
+.cardParent1 {
+  top: 30%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-21xl);
+}
+.youCanGrow1 {
+  font-size: var(--heading-1-80-size);
+  color: var(--color-green);
+  font-family: var(--heading-4-24);
+  position: absolute;
+  top: 137px;
+  left: calc(50% - 250px);
+  line-height: 100%;
+  display: inline-block;
+  width: 500px;
+  height: 85px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/main1@3x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+

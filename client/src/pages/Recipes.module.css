@@ -1,0 +1,41 @@
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/public/main1@3x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.description {
+  top: 105%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-21xl);
+}
+.cardParent {
+  top: 15%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-21xl);
+}
+.result {
+  position: relative;
+  background-color: var(--color-darkslategray);
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--light-text-default);
+  font-family: var(--heading-4-24);
+}
+

@@ -1,0 +1,12 @@
+.cardParent {
+  position: absolute;
+  top: 293px;
+  left: 59px;
+  width: 1321.27px;
+  height: 226px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-21xl);
+}
