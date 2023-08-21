@@ -1,66 +1,84 @@
-import { useCallback } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Selection2.module.css";
 const Selection2 = () => {
   const navigate = useNavigate();
+  const [selectedValue, setSelectedValue] = useState('');
+  const [message, setMessage] = useState('')
 
-  const onCardClick = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const setRegion = async () => {
+    try {
+      const response = await fetch('/api/selection2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ selectedValue })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Request failed'); 
+      }
+  
+      const responseData = await response.json();
+      setMessage(responseData)
+      console.log(message); // Log the response data
+    } catch (error) {
+      console.error(error); // Handle error if the request fails
+    }
+  };
 
-  const onCard1Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCardClick = () => {
+    setSelectedValue('Karratha')
+    console.log(selectedValue);
+  };
 
-  const onCard2Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard1Click = () => {
+    setSelectedValue('Onslow')
+    console.log(selectedValue);
+  };
 
-  const onCard3Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard2Click = () => {
+    setSelectedValue('Tom Price')
+    console.log(selectedValue);
+  };
 
-  const onCard4Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard3Click = () => {
+    setSelectedValue('Newman')
+    console.log(selectedValue);
+  };
 
-  const onCard5Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard4Click = () => {
+    setSelectedValue('Port Hedland')
+    console.log(selectedValue);
+  };
 
-  const onCard6Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard5Click = () => {
+    setSelectedValue('Marble Bar')
+    console.log(selectedValue);
+  };
 
-  const onCard7Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard6Click = () => {
+    setSelectedValue('Gibson Desert North')
+    console.log(selectedValue);
+  };
 
-  const NextButton = useCallback(() => {
+  const onCard7Click = () => {
+    setSelectedValue('Telfer')
+    console.log(selectedValue);
+  };
+
+  const NextButton = () => {
+    setRegion()
     navigate("/selection3");
-  }, [navigate]);
+  };
 
-  const BackButton = useCallback(() => {
+  const BackButton = () => {
+    setRegion()
     navigate("/selection1");
-  }, [navigate]);
+  };
 
   return (
     <div className={styles.main}>
@@ -77,7 +95,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -86,7 +104,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 56px)"
           titleDisplay="inline-block"
-          onCard6Click={onCardClick}
+          onCardClick={onCardClick}
         />
         <Card
           imageDimensions="/onslow@2x.png"
@@ -100,7 +118,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -109,7 +127,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 47px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard1Click}
+          onCardClick={onCard1Click}
         />
         <Card
           imageDimensions="/tom-price@2x.png"
@@ -123,7 +141,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -132,7 +150,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 63px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard2Click}
+          onCardClick={onCard2Click}
         />
         <Card
           imageDimensions="/newman@2x.png"
@@ -146,7 +164,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -155,7 +173,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 54px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard3Click}
+          onCardClick={onCard3Click}
         />
       </div>
       <div className={styles.cardParent2}>
@@ -171,7 +189,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -180,7 +198,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 84px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard4Click}
+          onCardClick={onCard4Click}
         />
         <Card
           imageDimensions="/marble-bar@2x.png"
@@ -194,7 +212,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -203,7 +221,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 69px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard5Click}
+          onCardClick={onCard5Click}
         />
         <Card
           imageDimensions="/gibson-desert-north@2x.png"
@@ -217,7 +235,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -226,7 +244,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 128px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard6Click}
+          onCardClick={onCard6Click}
         />
         <Card
           imageDimensions="/telfer@2x.png"
@@ -240,7 +258,7 @@ const Selection2 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -249,7 +267,7 @@ const Selection2 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 37px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard7Click}
+          onCardClick={onCard7Click}
         />
       </div>
       <b className={styles.region}>Region</b>

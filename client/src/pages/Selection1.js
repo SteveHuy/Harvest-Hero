@@ -1,57 +1,76 @@
-import { useCallback } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LegumeSection from "../components/LegumeSection";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Selection1.module.css";
 const Selection1 = () => {
   const navigate = useNavigate();
+  const [selectedValue, setSelectedValue] = useState('');
+  const [message, setMessage] = useState('')
 
-  const onCard1Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const setType = async () => {
+    try {
+      const response = await fetch('/api/selection1', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ selectedValue })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Request failed'); 
+      }
+  
+      const responseData = await response.json();
+      setMessage(responseData)
+      console.log(message); // Log the response data
+    } catch (error) {
+      console.error(error); // Handle error if the request fails
+    }
+  };
 
-  const onCard2Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
 
-  const onCard3Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard1Click = () => {
+    setSelectedValue('Grain')
+    console.log(selectedValue);
+  };
 
-  const onCard4Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard2Click = () => {
+    setSelectedValue('Nut/Seeds')
+    console.log(selectedValue);
+  };
 
-  const onCard5Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
 
-  const onCard6Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard3Click = () => {
+    setSelectedValue('Spice')
+    console.log(selectedValue);
+  };
 
-  const onCard7Click = useCallback(() => {
-    /* TODO: Cal API
-       Make tick system
-    */
-  }, []);
+  const onCard4Click = () => {
+    setSelectedValue('Fruit')
+    console.log(selectedValue);
+  };
 
-  const NextButton = useCallback(() => {
+  const onCard5Click = () => {
+    setSelectedValue('Legume')
+    console.log(selectedValue);
+  };
+
+  const onCard6Click = () => {
+    setSelectedValue('Vegetable')
+    console.log(selectedValue);
+  };
+
+  const onCard7Click = () => {
+    setSelectedValue('Herb')
+    console.log(selectedValue);
+  };
+
+  const NextButton = () => {
     navigate("/selection2");
-  }, [navigate]);
+    setType()
+  };
 
   return (
     <div className={styles.main}>
@@ -66,12 +85,12 @@ const Selection1 = () => {
           cardPadding="0"
           cardBackgroundColor="transparent"
           cardZIndex="0"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 36px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard1Click}
+          onCardClick={onCard1Click}
         />
         <Card
           imageDimensions="/fruit2@2x.png"
@@ -82,12 +101,12 @@ const Selection1 = () => {
           cardPadding="0"
           cardBackgroundColor="transparent"
           cardZIndex="1"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 66px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard2Click}
+          onCardClick={onCard2Click}
         />
         <Card
           imageDimensions="/fruit3@2x.png"
@@ -99,12 +118,12 @@ const Selection1 = () => {
           cardBackgroundColor="transparent"
           cardMargin="0 !important"
           cardZIndex="2"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 34px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard3Click}
+          onCardClick={onCard3Click}
         />
         <Card
           imageDimensions="/fruit@2x.png"
@@ -114,12 +133,12 @@ const Selection1 = () => {
           cardBorder="none"
           cardPadding="0"
           cardBackgroundColor="transparent"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 31px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard4Click}
+          onCardClick={onCard4Click}
         />
       </div>
 
@@ -134,12 +153,12 @@ const Selection1 = () => {
           cardPadding="0"
           cardBackgroundColor="transparent"
           cardZIndex="0"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 49px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard5Click}
+          onCardClick={onCard5Click}
         />
         <Card
           imageDimensions="/vegetable@3x.png"
@@ -150,12 +169,12 @@ const Selection1 = () => {
           cardPadding="0"
           cardBackgroundColor="transparent"
           cardZIndex="1"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 62px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard6Click}
+          onCardClick={onCard6Click}
         />
         <Card
           imageDimensions="/rectangle13@3x.png"
@@ -167,12 +186,12 @@ const Selection1 = () => {
           cardBackgroundColor="transparent"
           cardMargin="0 !important"
           cardZIndex="2"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardWidth="300px"
           cardHeight="225px"
           titleLeft="calc(50% - 34px)"
           titleDisplay="inline-block"
-          onCard6Click={onCard7Click}
+          onCardClick={onCard7Click}
         />
       </div>
       <Button

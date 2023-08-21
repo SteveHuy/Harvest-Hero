@@ -9,7 +9,8 @@
   display: inline-block;
   width: 457px;
   height: 85px;
-  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 10px 20px black;
+  
 }
 .cardParent1 {
   top: 30%;

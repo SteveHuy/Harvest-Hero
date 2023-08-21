@@ -1,19 +1,64 @@
-import { useCallback } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Selection3.module.css";
-const Selection31 = () => {
+const Selection3 = () => {
   const navigate = useNavigate();
+  const [selectedValue, setSelectedValue] = useState('');
+  const [message, setMessage] = useState('')
 
-  const NextButton = useCallback(() => {
+  const setPlacement = async () => {
+    try {
+      const response = await fetch('/api/selection3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ selectedValue })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Request failed'); 
+      }
+  
+      const responseData = await response.json();
+      setMessage(responseData)
+      console.log(message); // Log the response data
+    } catch (error) {
+      console.error(error); // Handle error if the request fails
+    }
+  };
+
+  const test = async () => {
+    try {
+      const response = await fetch('/api/plant'); 
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  const onCardClick = () => {
+    setSelectedValue(1)
+    console.log(selectedValue);
+  };
+
+  const onCard1Click = () => {
+    setSelectedValue(2)
+    console.log(selectedValue);
+  };
+
+  const NextButton = () => {
+    setPlacement()
+    test()
     navigate("/you-can-grow");
-  }, [navigate]);
+  };
 
 
-  const BackButton = useCallback(() => {
+  const BackButton = () => {
+    setPlacement()
     navigate("/selection2");
-  }, [navigate]);
+  }
 
   return (
     <div className={styles.main}>
@@ -30,7 +75,7 @@ const Selection31 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -39,6 +84,8 @@ const Selection31 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 43px)"
           titleDisplay="inline-block"
+          onCardClick={onCardClick}
+
         />
         <Card
           imageDimensions="/outdoor@2x.png"
@@ -52,7 +99,7 @@ const Selection31 = () => {
           cardTop="unset"
           cardLeft="unset"
           cardZIndex="unset"
-          cardBoxShadow="0px 15px 30px rgba(0, 0, 0, 0.15)"
+          cardBoxShadow="0px 15px 30px black"
           cardBackgroundImage="unset"
           cardBackgroundSize="unset"
           cardBackgroundRepeat="unset"
@@ -61,6 +108,8 @@ const Selection31 = () => {
           cardHeight="225px"
           titleLeft="calc(50% - 53px)"
           titleDisplay="inline-block"
+          onCardClick={onCard1Click}
+
         />
       </div>
       <b className={styles.indooroutdoor}>Indoor/Outdoor</b>
@@ -100,4 +149,4 @@ const Selection31 = () => {
   );
 };
 
-export default Selection31;
+export default Selection3;

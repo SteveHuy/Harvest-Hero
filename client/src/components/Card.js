@@ -22,7 +22,7 @@ const Card = memo(
     cardHeight,
     titleLeft,
     titleDisplay,
-    onCard6Click,
+    onCardClick,
   }) => {
     const cardStyle = useMemo(() => {
       return {
@@ -70,7 +70,7 @@ const Card = memo(
     }, [titleLeft, titleDisplay]);
 
     return (
-      <div className={styles.card} style={cardStyle} onClick={onCard6Click}>
+      <div className={styles.card} style={cardStyle} onClick={onCardClick}>
         <img className={styles.cardChild} alt="" src={imageDimensions} />
         <b className={styles.title} style={titleStyle}>
           {componentTitle}
