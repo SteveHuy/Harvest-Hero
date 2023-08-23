@@ -1,6 +1,6 @@
 import { memo, useMemo } from "react";
 import styles from "./Card.module.css";
-const Card = memo(
+const Card = (
   ({
     imageDimensions,
     componentTitle,

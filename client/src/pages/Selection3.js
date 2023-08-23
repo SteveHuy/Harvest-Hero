@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Selection3.module.css";
+
 const Selection3 = () => {
   const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState('');
   const [message, setMessage] = useState('')
+
+  const [selectedCard, setSelectedCard] = useState(null);
 
   const setPlacement = async () => {
     try {
@@ -30,28 +33,57 @@ const Selection3 = () => {
     }
   };
 
-  const test = async () => {
-    try {
-      const response = await fetch('/api/plant'); 
-    } catch (error) {
-      console.error('Error:', error);
+
+
+  useEffect(() => {
+    changeToGreen()
+  }, [selectedCard]);
+
+
+
+  const changeToGreen = () => {
+    const element = document.getElementById(selectedCard);
+    if (element) {
+      element.style.boxShadow = `0px 15px 30px green`;
+    }
+  };
+
+  const changeToBlack = () => {
+    const element = document.getElementById(selectedCard);
+    if (element) {
+      element.style.boxShadow = `0px 0px 0px black`;
     }
   };
 
   const onCardClick = () => {
+    // Indoor
+    changeToBlack()
     setSelectedValue(1)
     console.log(selectedValue);
+    setSelectedCard(1)
   };
 
   const onCard1Click = () => {
+    // Outdoor
+    changeToBlack()
     setSelectedValue(2)
     console.log(selectedValue);
+    setSelectedCard(2)
   };
 
   const NextButton = () => {
     setPlacement()
-    test()
-    navigate("/you-can-grow");
+    if (selectedValue == 2){
+      // go to the shade
+      navigate("/selection4");
+    }else{
+      // go to the water
+      navigate("/selection5"); 
+
+    }
+
+
+    
   };
 
 
@@ -61,8 +93,10 @@ const Selection3 = () => {
   }
 
   return (
+
     <div className={styles.main}>
       <div className={styles.cardParent1}>
+        <div id="1">
         <Card
           imageDimensions="/indoor@2x.png"
           componentTitle="Indoor"
@@ -85,8 +119,9 @@ const Selection3 = () => {
           titleLeft="calc(50% - 43px)"
           titleDisplay="inline-block"
           onCardClick={onCardClick}
-
         />
+        </div>
+        <div id="2">
         <Card
           imageDimensions="/outdoor@2x.png"
           componentTitle="Outdoor"
@@ -109,8 +144,8 @@ const Selection3 = () => {
           titleLeft="calc(50% - 53px)"
           titleDisplay="inline-block"
           onCardClick={onCard1Click}
-
         />
+        </div>
       </div>
       <b className={styles.indooroutdoor}>Indoor/Outdoor</b>
       <Button
@@ -145,7 +180,9 @@ const Selection3 = () => {
         primaryButtonDisplay="inline-block"
         onButtonClick={BackButton}
       />
+
     </div>
+
   );
 };
 

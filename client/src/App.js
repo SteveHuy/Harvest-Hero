@@ -8,6 +8,8 @@ import SplashScreen from "./pages/SplashScreen";
 import Selection1 from "./pages/Selection1";
 import Selection2 from "./pages/Selection2";
 import Selection3 from "./pages/Selection3";
+import Selection4 from "./pages/Selection4";
+import Selection5 from "./pages/Selection5";
 import YouCanGrow from "./pages/YouCanGrow";
 import Result from "./pages/Result";
 import Recipes from "./pages/Recipes";
@@ -45,6 +47,14 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/selection4":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selection5":
+        title = "";
+        metaDescription = "";
+        break;
       case "/you-can-grow":
         title = "";
         metaDescription = "";
@@ -79,6 +89,8 @@ function App() {
       <Route path="/selection1" element={<Selection1 />} />
       <Route path="/selection2" element={<Selection2 />} />
       <Route path="/selection3" element={<Selection3 />} />
+      <Route path="/selection4" element={<Selection4 />} />
+      <Route path="/selection5" element={<Selection5 />} />
       <Route path="/you-can-grow" element={<YouCanGrow />} />
       <Route path="/result" element={<Result />} />
       <Route path="/recipes" element={<Recipes />} />

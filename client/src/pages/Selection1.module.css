@@ -18,6 +18,8 @@
   display: flex;
   flex-direction: row;
   gap: var(--gap-21xl);
+
+  
 }
 
 .cardParent2 {
@@ -44,3 +46,6 @@
 
 
 
+.green {
+  color: green; /* Change to the desired color */
+}
