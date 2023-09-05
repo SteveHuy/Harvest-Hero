@@ -20,7 +20,7 @@ class database:
 
         self.db = self.client['Harvest-Hero']
 
-        self.crop = self.db.crop
+        self.crop = self.db.new_crop
 
         self.recipe = self.db.recipe
 
@@ -41,9 +41,14 @@ class database:
     def retrieve_plant(self, rainfall: int, temperature: int, sun: int, placement: int):
         cursor = self.crop.find()
         res = []
-        for document in cursor:
-            if document['Rainfall (Scale 1-5)'] == rainfall and document['Temperature (Scale 1-5)'] == temperature and document['Sunlight Requirement (Scale 1-5)'] == sun and document["Indoor"]['Outdoor Preference (1: Indoor,  2: Outdoor)'] == placement:
-                res.append(document)
+        if placement == 1: #indoors
+            for document in cursor:
+                if document['Indoor/Outdoor Preference (1: Indoor,  2: Outdoor)'] == placement:
+                    res.append(document)
+        else:
+            for document in cursor:
+                if document['Rainfall (Scale 1-5)'] == rainfall and document['Temperature (Scale 1-5)'] == temperature and document['Sunlight Requirement (Scale 1-5)'] == sun and document['Indoor/Outdoor Preference (1: Indoor,  2: Outdoor)'] == placement:
+                    res.append(document)
 
         return res
 

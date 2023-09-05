@@ -32,7 +32,6 @@ class plant:
 
     # stuff that doesn't need the front end 
     def set_region_factors(self):
-        print(self.region)
         data = self.db.retrieve_area(self.region)
         # sets rainfall, temp and sun
         self.rainfall = data[0]['rain']
@@ -41,13 +40,13 @@ class plant:
         return 
 
     def select_plant(self):
+
         plants = self.db.retrieve_plant(self.rainfall, self.temp, self.sun, self.placement)
-        print(plants)
-        print(self.print())
         for i in plants:
             if i['Type of Plant'] == self.type:
                 self.plants.append(i)
-            
+                 
+        
         if len(self.plants) == 0:
             print("No Plants for that type was found")
             self.plants = plants
