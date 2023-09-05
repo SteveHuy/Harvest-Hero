@@ -60,14 +60,12 @@ const Selection1 = () => {
   const onCard1Click = () => {
     changeToBlack()
     setSelectedValue('Grain')
-    console.log(selectedValue);
     setSelectedCard(1)
   };
 
   const onCard2Click = () => {
     changeToBlack()
     setSelectedValue('Nut/Seeds')
-    console.log(selectedValue);
     setSelectedCard(2)
 
   };
@@ -76,35 +74,30 @@ const Selection1 = () => {
   const onCard3Click = () => {
     changeToBlack()
     setSelectedValue('Spice')
-    console.log(selectedValue);
     setSelectedCard(3)
   };
 
   const onCard4Click = () => {
     changeToBlack()
     setSelectedValue('Fruit')
-    console.log(selectedValue);
     setSelectedCard(4)
   };
 
   const onCard5Click = () => {
     changeToBlack()
     setSelectedValue('Legume')
-    console.log(selectedValue);
     setSelectedCard(5)
   };
 
   const onCard6Click = () => {
     changeToBlack()
     setSelectedValue('Vegetable')
-    console.log(selectedValue);
     setSelectedCard(6)
   };
 
   const onCard7Click = () => {
     changeToBlack()
     setSelectedValue('Herb')
-    console.log(selectedValue);
     setSelectedCard(7)
   };
 

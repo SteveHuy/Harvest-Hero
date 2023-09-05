@@ -55,56 +55,48 @@ const Selection2 = () => {
   const onCardClick = () => {
     changeToBlack()
     setSelectedValue('Karratha')
-    console.log(selectedValue);
     setSelectedCard(1)
   };
 
   const onCard1Click = () => {
     changeToBlack()
     setSelectedValue('Onslow')
-    console.log(selectedValue);
     setSelectedCard(2)
   };
 
   const onCard2Click = () => {
     changeToBlack()
     setSelectedValue('Tom Price')
-    console.log(selectedValue);
     setSelectedCard(3)
   };
 
   const onCard3Click = () => {
     changeToBlack()
     setSelectedValue('Newman')
-    console.log(selectedValue);
     setSelectedCard(4)
   };
 
   const onCard4Click = () => {
     changeToBlack()
     setSelectedValue('Port Hedland')
-    console.log(selectedValue);
     setSelectedCard(5)
   };
 
   const onCard5Click = () => {
     changeToBlack()
     setSelectedValue('Marble Bar')
-    console.log(selectedValue);
     setSelectedCard(6)
   };
 
   const onCard6Click = () => {
     changeToBlack()
     setSelectedValue('Gibson Desert North')
-    console.log(selectedValue);
     setSelectedCard(7)
   };
 
   const onCard7Click = () => {
     changeToBlack()
     setSelectedValue('Telfer')
-    console.log(selectedValue);
     setSelectedCard(8)
   };
 

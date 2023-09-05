@@ -5,7 +5,7 @@
   flex-direction: row;
   gap: var(--gap-21xl);
 }
-.shade {
+.water{
   font-size: var(--heading-1-80-size);
   color: var(--color-green);
   font-family: var(--heading-4-24);

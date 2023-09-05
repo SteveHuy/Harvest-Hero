@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext  } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Selection3.module.css";
+import { GlobalContext } from '../GlobalContext';
+
+
 
 const Selection3 = () => {
   const navigate = useNavigate();
@@ -10,6 +13,9 @@ const Selection3 = () => {
   const [message, setMessage] = useState('')
 
   const [selectedCard, setSelectedCard] = useState(null);
+
+
+  const { setPlacementVariable } = useContext(GlobalContext);
 
   const setPlacement = async () => {
     try {
@@ -59,7 +65,6 @@ const Selection3 = () => {
     // Indoor
     changeToBlack()
     setSelectedValue(1)
-    console.log(selectedValue);
     setSelectedCard(1)
   };
 
@@ -67,23 +72,19 @@ const Selection3 = () => {
     // Outdoor
     changeToBlack()
     setSelectedValue(2)
-    console.log(selectedValue);
     setSelectedCard(2)
   };
 
   const NextButton = () => {
-    setPlacement()
+    setPlacementVariable(selectedValue)
+    setPlacement() 
     if (selectedValue == 2){
       // go to the shade
       navigate("/selection4");
     }else{
       // go to the water
       navigate("/selection5"); 
-
     }
-
-
-    
   };
 
 

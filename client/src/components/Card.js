@@ -2,6 +2,7 @@ import { memo, useMemo } from "react";
 import styles from "./Card.module.css";
 const Card = (
   ({
+    cardId,
     imageDimensions,
     componentTitle,
     cardPosition,
@@ -26,6 +27,7 @@ const Card = (
   }) => {
     const cardStyle = useMemo(() => {
       return {
+        id: cardId,
         position: cardPosition,
         cursor: cardCursor,
         border: cardBorder,

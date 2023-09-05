@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
-import styles from "./Selection4.module.css";
+import styles from "./Selection5.module.css";
+import { GlobalContext } from '../GlobalContext';
 
 // Water
 const Selection5 = () => {
@@ -11,10 +12,11 @@ const Selection5 = () => {
   const [message, setMessage] = useState('')
 
   const [selectedCard, setSelectedCard] = useState(null);
+  const { placementVariable } = useContext(GlobalContext);
 
-  const setPlacement = async () => {
+  const setWater = async () => {
     try {
-      const response = await fetch('/api/selection3', {
+      const response = await fetch('/api/selection5', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -33,7 +35,22 @@ const Selection5 = () => {
       console.error(error); // Handle error if the request fails
     }
   };
-
+  const setPlant = async () => {
+    try {
+      const response = await fetch('/api/plant', {
+      });
+  
+      if (!response.ok) {
+        throw new Error('Request failed'); 
+      }
+  
+      const responseData = await response.json();
+      setMessage(responseData)
+      console.log(message); // Log the response data
+    } catch (error) {
+      console.error(error); // Handle error if the request fails
+    }
+  };
 
 
 
@@ -59,38 +76,43 @@ const Selection5 = () => {
 
   const onCardClick = () => {
     changeToBlack()
-    setSelectedValue(1)
-    console.log(selectedValue);
+    setSelectedValue(2)
     setSelectedCard(1)
   };
 
   const onCard1Click = () => {
     changeToBlack()
-    setSelectedValue(2)
-    console.log(selectedValue);
+    setSelectedValue(1)
     setSelectedCard(2)
   };
   const onCard2Click = () => {
     changeToBlack()
     setSelectedValue(0)
-    console.log(selectedValue);
     setSelectedCard(3)
   };
 
 
   const NextButton = () => {
-    setPlacement()
+    setWater()
+    setPlant()
     navigate("/you-can-grow");
   };
 
 
   const BackButton = () => {
-    navigate("/selection4");
+    setWater()
+    if (placementVariable == 1){
+      navigate("/selection3");
+    }else{
+      navigate("/selection4");
+    }
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.cardParent1}>
+      <button onClick = {setPlant}> Press to change constant</button>
+
         <div id="1">
         <Card
           imageDimensions="/lotsofwater.jpg"
@@ -167,7 +189,7 @@ const Selection5 = () => {
         />
         </div>
       </div>
-      <b className={styles.shade}>Shade</b>
+      <b className={styles.water}>Water</b>
       <Button
         buttonText="Next"
         buttonPosition="absolute"
