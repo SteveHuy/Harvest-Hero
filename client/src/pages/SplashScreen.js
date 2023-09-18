@@ -13,7 +13,6 @@ const SplashScreen = () => {
     <div className={styles.main}>
       <div className={styles.card}>
         <b className={styles.harvestHero}>Harvest Hero</b>
-        <img className={styles.image1Icon} alt="" src="/image-1@2x.png" />
         <img className={styles.image2Icon} alt="" src="/image-2@2x.png" />
         <Button
           buttonTop="68%"

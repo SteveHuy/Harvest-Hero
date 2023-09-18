@@ -101,254 +101,253 @@ const Selection2 = () => {
   };
 
   const NextButton = () => {
+    if (selectedValue != ""){
+
     setRegion()
     navigate("/selection3");
+    }
   };
 
   const BackButton = () => {
-    setRegion()
     navigate("/selection1");
+    
   };
 
   return (
     <div className={styles.main}>
-      <div className={styles.cardParent1}>
-        <div id = "1">
-          <Card
-            imageDimensions="/karratha@2x.png"
-            componentTitle="Karratha"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 56px)"
-            titleDisplay="inline-block"
-            onCardClick={onCardClick}
-          />
+      <div className={styles.card_parent}>
+        <div className={styles.flex_container}>
+          <div id="1">
+            <Card
+              imageDimensions="/karratha@2x.png"
+              componentTitle="Karratha"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCardClick}
+            />
+          </div>
+
+          <div id="2">
+            <Card
+              imageDimensions="/onslow@2x.png"
+              componentTitle="Onslow"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard1Click}
+            />
+          </div>
+          <div id="3">
+            <Card
+              imageDimensions="/tom-price@2x.png"
+              componentTitle="Tom Price"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard2Click}
+            />
+          </div>
+          <div id="4">
+            <Card
+              imageDimensions="/newman@2x.png"
+              componentTitle="Newman"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard3Click}
+            />
+          </div>
+          <div id="5">
+            <Card
+              imageDimensions="/port-hedland@2x.png"
+              componentTitle="Port Hedland"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard4Click}
+            />
+          </div>
+          <div id="6">
+            <Card
+              imageDimensions="/marble-bar@2x.png"
+              componentTitle="Marble Bar"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard5Click}
+            />
+          </div>
+          <div id="7">
+            <Card
+              imageDimensions="/gibson-desert-north@2x.png"
+              componentTitle="Gibson Desert North"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard6Click}
+            />
+          </div>
+          <div id="8">
+            <Card
+              imageDimensions="/telfer@2x.png"
+              componentTitle="Telfer"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="unset"
+              cardTop="unset"
+              cardLeft="unset"
+              cardZIndex="unset"
+              cardBoxShadow="0px 15px 30px black"
+              cardBackgroundImage="unset"
+              cardBackgroundSize="unset"
+              cardBackgroundRepeat="unset"
+              cardBackgroundPosition="unset"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard7Click}
+            />
+
+          </div>
         </div>
-        <div id = "2">
-          <Card
-            imageDimensions="/onslow@2x.png"
-            componentTitle="Onslow"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 47px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard1Click}
+        <div className={styles.inner_container}>
+
+
+          <Button className={styles.button}
+            buttonText="Next"
+            buttonPosition="relative"
+            buttonCursor="pointer"
+            buttonBorder="none"
+            buttonPadding="0"
+            buttonBackgroundColor="transparent"
+            buttonLeft="92%"
+            rectangleDivBackgroundColor="unset"
+            rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
+            primaryButtonLeft="41.15%"
+            primaryButtonDisplay="inline-block"
+            onButtonClick={NextButton}
           />
-        </div>
-        <div id = "3">
-          <Card
-            imageDimensions="/tom-price@2x.png"
-            componentTitle="Tom Price"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 63px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard2Click}
-          />
-        </div>
-        <div id = "4">
-          <Card
-            imageDimensions="/newman@2x.png"
-            componentTitle="Newman"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 54px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard3Click}
-          />
-        </div>
-      </div>
-      <div className={styles.cardParent2}>
-        <div id = "5">
-          <Card
-            imageDimensions="/port-hedland@2x.png"
-            componentTitle="Port Hedland"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 84px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard4Click}
-          />
-        </div>
-        <div id = "6">
-          <Card
-            imageDimensions="/marble-bar@2x.png"
-            componentTitle="Marble Bar"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 69px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard5Click}
-          />
-        </div>
-        <div id = "7">
-          <Card
-            imageDimensions="/gibson-desert-north@2x.png"
-            componentTitle="Gibson Desert North"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 128px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard6Click}
-          />
-        </div>
-        <div id = "8">
-          <Card
-            imageDimensions="/telfer@2x.png"
-            componentTitle="Telfer"
-            cardPosition="relative"
-            cardCursor="pointer"
-            cardBorder="none"
-            cardPadding="0"
-            cardBackgroundColor="transparent"
-            cardMargin="unset"
-            cardTop="unset"
-            cardLeft="unset"
-            cardZIndex="unset"
-            cardBoxShadow="0px 15px 30px black"
-            cardBackgroundImage="unset"
-            cardBackgroundSize="unset"
-            cardBackgroundRepeat="unset"
-            cardBackgroundPosition="unset"
-            cardWidth="300px"
-            cardHeight="225px"
-            titleLeft="calc(50% - 37px)"
-            titleDisplay="inline-block"
-            onCardClick={onCard7Click}
+          <Button className={styles.button}
+            buttonText="Back"
+            buttonPosition="relative"
+            buttonCursor="pointer"
+            buttonBorder="none"
+            buttonPadding="0"
+            buttonBackgroundColor="transparent"
+            buttonLeft="-24%"
+            rectangleDivBackgroundColor="unset"
+            rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
+            primaryButtonLeft="40.77%"
+            primaryButtonDisplay="inline-block"
+            onButtonClick={BackButton}
           />
         </div>
       </div>
       <b className={styles.region}>Region</b>
-      <Button
-        buttonText="Next"
-        buttonPosition="absolute"
-        buttonCursor="pointer"
-        buttonBorder="none"
-        buttonPadding="0"
-        buttonBackgroundColor="transparent"
-        buttonTop="92%"
-        buttonLeft="86%"
-        buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
-        rectangleDivBackgroundColor="unset"
-        rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
-        primaryButtonLeft="41.15%"
-        primaryButtonDisplay="inline-block"
-        onButtonClick={NextButton}
-      />
-      <Button
-        buttonText="Back"
-        buttonPosition="absolute"
-        buttonCursor="pointer"
-        buttonBorder="none"
-        buttonPadding="0"
-        buttonBackgroundColor="transparent"
-        buttonTop="92%"
-        buttonLeft="0.5%"
-        buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
-        rectangleDivBackgroundColor="unset"
-        rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
-        primaryButtonLeft="40.77%"
-        primaryButtonDisplay="inline-block"
-        onButtonClick={BackButton}
-      />
+
+
     </div>
   );
 };

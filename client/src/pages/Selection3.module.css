@@ -1,10 +1,36 @@
-.cardParent1 {
+.card_parent {
   top: 30%;
   position: absolute;
   display: flex;
-  flex-direction: row;
-  gap: var(--gap-21xl);
+  flex-direction: column;
+  width: 85%;
+  height: 60%;
 }
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next row */
+  gap: 2em 3em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.inner_container {
+  display: flex;
+  align-content: flex-end;
+  margin-top: calc(2em + 100px + 225px);
+  /* Add a gap between the dynamic container and the flex container */
+
+}
+
+.button {
+  flex: 0 0 auto;
+  /* Ensure both buttons have the same height */
+
+}
+
 .indooroutdoor {
   font-size: var(--heading-1-80-size);
   color: var(--color-green);
@@ -22,14 +48,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  /* Minimum height to cover the entire viewport */
   background-image: url(/public/main1@3x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  overflow: auto;
 }
 

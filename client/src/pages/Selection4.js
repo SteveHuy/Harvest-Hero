@@ -75,19 +75,21 @@ const Selection4 = () => {
 
 
   const NextButton = () => {
+    if (selectedValue != ""){
     setShade()
     navigate("/selection5");
+    }
   };
 
 
   const BackButton = () => {
-    setShade()
     navigate("/selection3");
   }
 
   return (
-      <div className={styles.main}>
-        <div className={styles.cardParent1}>
+    <div className={styles.main}>
+      <div className={styles.card_parent}>
+        <div className={styles.flex_container}>
           <div id="1">
             <Card
               imageDimensions="/full.jpg"
@@ -108,7 +110,6 @@ const Selection4 = () => {
               cardBackgroundPosition="unset"
               cardWidth="300px"
               cardHeight="225px"
-              titleLeft="calc(50% - 43px)"
               titleDisplay="inline-block"
               onCardClick={onCardClick}
             />
@@ -133,7 +134,6 @@ const Selection4 = () => {
               cardBackgroundPosition="unset"
               cardWidth="300px"
               cardHeight="225px"
-              titleLeft="calc(50% - 53px)"
               titleDisplay="inline-block"
               onCardClick={onCard1Click}
             />
@@ -158,46 +158,48 @@ const Selection4 = () => {
               cardBackgroundPosition="unset"
               cardWidth="300px"
               cardHeight="225px"
-              titleLeft="calc(50% - 35px)"
               titleDisplay="inline-block"
               onCardClick={onCard2Click}
             />
           </div>
         </div>
-        <b className={styles.shade}>Shade</b>
-        <Button
+        <div className={styles.inner_container}>
+        <Button className = {styles.button}
           buttonText="Next"
           buttonPosition="absolute"
           buttonCursor="pointer"
           buttonBorder="none"
           buttonPadding="0"
           buttonBackgroundColor="transparent"
-          buttonTop="92%"
-          buttonLeft="86%"
-          buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
+          buttonTop="103.95%"
+          buttonLeft="92%"
           rectangleDivBackgroundColor="unset"
           rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
           primaryButtonLeft="41.15%"
           primaryButtonDisplay="inline-block"
           onButtonClick={NextButton}
         />
-        <Button
+        <Button className = {styles.button}
           buttonText="Back"
           buttonPosition="absolute"
           buttonCursor="pointer"
           buttonBorder="none"
           buttonPadding="0"
           buttonBackgroundColor="transparent"
-          buttonTop="92%"
-          buttonLeft="0.5%"
-          buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
+          buttonTop="103.95%"
+          buttonLeft="-8%"
           rectangleDivBackgroundColor="unset"
           rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
           primaryButtonLeft="40.77%"
           primaryButtonDisplay="inline-block"
           onButtonClick={BackButton}
         />
+        </div>
       </div>
+
+      <b className={styles.shade}>Shade</b>
+
+    </div>
 
   );
 };

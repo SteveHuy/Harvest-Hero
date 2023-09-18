@@ -1,25 +1,34 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import { GlobalContext } from '../GlobalContext';
+
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Result.module.css";
 const Result = () => {
+
+  const { plantData, recipeData } = useContext(GlobalContext);
+
   const navigate = useNavigate();
 
-  const NextButton = useCallback(() => {
-    navigate("/recipes");
-  }, [navigate]);
+  const NextButton = () => {
 
-  const BackButton = useCallback(() => {
+      navigate("/recipes");
+
+  
+
+  };
+
+  const BackButton = () => {
     navigate("/you-can-grow");
-  }, [navigate]);
+  };
 
   return (
     <div className={styles.main}>
+      <b className={styles.crop_name}>{plantData.Crop}</b>
         <div className={styles.cardParent}>
           <Card
-            imageDimensions="/plant@2x.png"
-            componentTitle="Plant Name"
+            imageDimensions={`crops/${plantData.Crop.replace(/\s/g, '')}.jpg`}
             cardPosition="relative"
             cardCursor="unset"
             cardBorder="unset"
@@ -36,11 +45,10 @@ const Result = () => {
             cardBackgroundPosition="unset"
             cardWidth="608px"
             cardHeight="344px"
-            titleLeft="calc(50% - 72px)"
             titleDisplay="inline-block"
           />
           <div className={styles.description}>
-            Explain how they plant is and what it taste like
+            {plantData.Desc}
           </div>
         </div>
         <Button
@@ -52,7 +60,6 @@ const Result = () => {
         buttonBackgroundColor="transparent"
         buttonTop="92%"
         buttonLeft="86%"
-        buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
         rectangleDivBackgroundColor="unset"
         rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
         primaryButtonLeft="36%"
@@ -68,7 +75,6 @@ const Result = () => {
         buttonBackgroundColor="transparent"
         buttonTop="92%"
         buttonLeft="0.5%"
-        buttonBoxShadow="0px 10px 20px rgba(0, 0, 0, 0.15)"
         rectangleDivBackgroundColor="unset"
         rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
         primaryButtonLeft="40.77%"

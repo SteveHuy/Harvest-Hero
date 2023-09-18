@@ -1,4 +1,17 @@
+.crop_name{
+  font-size: var(--heading-1-80-size);
+  color: var(--color-green);
+  font-family: var(--heading-4-24);
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  line-height: 100%;
+  display: inline-block;
+  width: 500px;
+  height: 85px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 
+}
 .main {
   display: flex;
   justify-content: center;
@@ -18,6 +31,8 @@
   position: absolute;
   display: flex;
   flex-direction: row;
+  text-align: center;
+  font-size:large;
   gap: var(--gap-21xl);
 }
 .cardParent {

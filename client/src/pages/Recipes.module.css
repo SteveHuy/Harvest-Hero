@@ -1,32 +1,69 @@
-
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  /* Minimum height to cover the entire viewport */
   background-image: url(/public/main1@3x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  overflow: auto;
+  background-attachment: fixed;
 }
-.description {
-  top: 105%;
+
+.recipe_list{
+  text-align: center;
+
+}
+.name {
+  font-size: var(--heading-1-80-size);
+  color: var(--color-green);
+  font-family: var(--heading-4-24);
+  
+  line-height: 100%;
+  display: inline-block;
+  width: 1000px;
+  height: 85px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  margin-top:50px;
+}
+
+
+.text_container {
+  background-color: rgba(206, 205, 205, 0.9); 
+  padding: 20px; 
+  display: inline-block;
+}
+.list_item {
+  margin-bottom: 10px; /* Adjust the value as per your desired gap */
+  max-width: 1000px;
+}
+
+.description{
+  margin-bottom: 10px; /* Adjust the value as per your desired gap */
+  max-width: 1000px;
+  background-color: rgba(206, 205, 205, 0.9); 
+  padding: 20px; 
+  display: inline-block;
+}
+
+.h2 {
+  font-size: var(--heading-3-80-size);
+  color: var(--color-green);
+  font-family: var(--heading-4-24);
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap-21xl);
+  top: 137px;
+  
+  line-height: 100%;
+  display: inline-block;
+  width: 500px;
+  height: 85px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
-.cardParent {
-  top: 15%;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap-21xl);
-}
+
 .result {
   position: relative;
   background-color: var(--color-darkslategray);
@@ -39,3 +76,9 @@
   font-family: var(--heading-4-24);
 }
 
+.button {
+  flex: 0 0 auto;
+  margin-bottom: 50px;
+  /* Ensure both buttons have the same height */
+
+}
