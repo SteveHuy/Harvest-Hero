@@ -49,7 +49,6 @@ class plant:
         for i in plants:
             if i['Type of Plant'] == self.type:
                 self.plants.append(i)
-                 
         
         if len(self.plants) == 0:
             print("No Plants for that type was found")

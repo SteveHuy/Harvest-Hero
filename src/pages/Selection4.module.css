@@ -1,0 +1,62 @@
+
+.shade {
+  font-size: var(--heading-1-80-size);
+  color: var(--color-green);
+  font-family: var(--heading-4-24);
+  position: absolute;
+  top: 137px;
+  left: calc(50% - 100px);
+  line-height: 100%;
+  display: inline-block;
+  width: 457px;
+  height: 85px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card_parent {
+  top: 30%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  height: 60%;
+}
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap to the next row */
+  gap: 3.5em 3em;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.inner_container {
+  display: flex;
+  align-content: flex-end;
+  margin-top: 100px;
+  /* Add a gap between the dynamic container and the flex container */
+
+}
+
+.button {
+  flex: 0 0 auto;
+  /* Ensure both buttons have the same height */
+
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Minimum height to cover the entire viewport */
+  background-image: url(/public/main1@3x.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  overflow: auto;
+}
+

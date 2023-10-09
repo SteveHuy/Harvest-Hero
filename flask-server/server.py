@@ -2,11 +2,12 @@ from flask import Flask, jsonify, render_template, request
 from plant import plant
 from database import database
 from pprint import pprint 
-
+from flask_cors import CORS
 
 
 
 app = Flask(__name__)
+CORS(app, origins="http://localhost:3000")
 
 app.config['database'] = database()
 app.config['plant'] = plant(app.config['database'])
