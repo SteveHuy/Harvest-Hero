@@ -38,7 +38,7 @@ class database:
         return res
     
 
-    def retrieve_plant(self, rainfall: int, temperature: int, sun: int, placement: int):
+    def retrieve_plant(self, rainfall: int, rainfall_range:int, temperature: int, sun: int, sun_range: int, placement: int):
         cursor = self.crop.find()
         res = []
         if placement == 1: #indoors
@@ -47,7 +47,7 @@ class database:
                     res.append(document)
         else:
             for document in cursor:
-                if document['Rainfall (Scale 1-5)'] == rainfall and document['Temperature (Scale 1-5)'] == temperature and document['Sunlight Requirement (Scale 1-5)'] == sun and document['Indoor/Outdoor Preference (1: Indoor,  2: Outdoor)'] == placement:
+                if (rainfall <= document['Rainfall (Scale 1-5)'] <= rainfall_range) and document['Temperature (Scale 1-5)'] == temperature and (sun_range <= document['Sunlight Requirement (Scale 1-5)'] <= sun):
                     res.append(document)
 
         return res

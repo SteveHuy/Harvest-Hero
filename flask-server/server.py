@@ -52,16 +52,19 @@ def get_shade():
     data = request.get_json()
 
     shade = data.get('selectedValue')
+    current = app.config['plant'].sun
 
-    if shade != 0:
-        current = app.config['plant'].sun
-        current = current - shade
-        if current <= 1:
-            current = 1
-      
-    app.config['plant'].sun = current
+    if current == 1:
+        shade = 1
+    elif current == 2 and shade == 2:
+        shade = 1
+    else:
+        shade = current - shade
+    print(current)
+    print(shade)
+    app.config['plant'].sun_shade = shade
     response = {'message': 'shade has been selected'}
-    print(app.config['plant'].sun)
+    print(app.config['plant'].sun_shade)
 
     return jsonify(response)
 
@@ -70,16 +73,22 @@ def get_water():
     data = request.get_json()
 
     water = data.get('selectedValue')
+    current = app.config['plant'].rainfall
+    if current > 5:
+        water = 5
+    elif current > 4 and water == 2:
+        water = 5
+    else:
+        water = current + water
+    
 
-    if water != 0:
-        current = app.config['plant'].rainfall
-        current = current + water
-        if current > 5:
-            current = 5
-      
-    app.config['plant'].rainfall = current
+    print(current)
+    print(water)
+    app.config['plant'].rainfall_range = water
+        
+
     response = {'message': 'water has been selected'}
-    print(app.config['plant'].rainfall)
+    print(app.config['plant'].rainfall_range)
     return jsonify(response)
 
 @app.route('/api/plant')
