@@ -41,6 +41,10 @@ class database:
     def retrieve_plant(self, rainfall: int, rainfall_range:int, temperature: int, sun: int, sun_range: int, placement: int):
         cursor = self.crop.find()
         res = []
+        print(rainfall)
+        print(rainfall_range)
+        print(sun)
+        print(sun_range)
         if placement == 1: #indoors
             for document in cursor:
                 if document['Indoor/Outdoor Preference (1: Indoor,  2: Outdoor)'] == placement:

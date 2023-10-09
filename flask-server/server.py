@@ -19,7 +19,6 @@ def get_type():
     app.config['plant'].type = data.get('selectedValue') 
     response = {'message': 'type has been selected'}
 
-    print(app.config['plant'].type)
 
     return jsonify(response)
 
@@ -33,7 +32,6 @@ def get_region():
     app.config['plant'].set_region_factors()
     response = {'message': 'region has been selected'}
 
-    print(app.config['plant'].region)
     return jsonify(response)
 
 
@@ -43,7 +41,6 @@ def get_placement():
 
     app.config['plant'].placement = data.get('selectedValue') 
     response = {'message': 'placement has been selected'}
-    print(app.config['plant'].placement)
 
     return jsonify(response)
 
@@ -60,11 +57,9 @@ def get_shade():
         shade = 1
     else:
         shade = current - shade
-    print(current)
-    print(shade)
-    app.config['plant'].sun_shade = shade
+
+    app.config['plant'].sun_range = shade
     response = {'message': 'shade has been selected'}
-    print(app.config['plant'].sun_shade)
 
     return jsonify(response)
 
@@ -82,13 +77,10 @@ def get_water():
         water = current + water
     
 
-    print(current)
-    print(water)
     app.config['plant'].rainfall_range = water
         
 
     response = {'message': 'water has been selected'}
-    print(app.config['plant'].rainfall_range)
     return jsonify(response)
 
 @app.route('/api/plant')
@@ -102,6 +94,8 @@ def plant_selector():
 @app.route('/api/plant/get', methods = ['GET'])
 def get_plants():
     data = app.config['plant'].set_json_data()
+
+
     return jsonify(data)
 
 @app.route('/api/plant/recipe', methods = ['GET','POST'])

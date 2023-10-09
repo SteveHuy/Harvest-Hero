@@ -76,6 +76,7 @@ class plant:
     def select_plant(self):
         self.plants = []
         plants = self.db.retrieve_plant(self.rainfall, self.rainfall_range, self.temp, self.sun, self.sun_range, self.placement)
+        print(plants)
         for i in plants:
             if i['Type of Plant'] == self.type:
                 self.plants.append(i)
@@ -121,6 +122,8 @@ class plant:
                'Placement': self.placement,
                'Rainfall':self.rainfall,
                'Temperature':self.temp,
-               'Sun Exposure': self.sun}
+               'Sun Exposure': self.sun,
+               'Rainfall Range':self.rainfall_range,
+               'Sun Range': self.sun_range}
         pprint(res)
         return 
