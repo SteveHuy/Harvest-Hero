@@ -101,6 +101,12 @@ const Selection1 = () => {
     setSelectedCard(7)
   };
 
+  const onCard8Click = () => {
+    changeToBlack()
+    setSelectedValue('Indigenous Fruit')
+    setSelectedCard(8)
+  };
+
   const NextButton = () => {
     if (selectedValue != ""){
       navigate("/selection2");
@@ -237,6 +243,24 @@ const Selection1 = () => {
               cardHeight="225px"
               titleDisplay="inline-block"
               onCardClick={onCard7Click}
+            />
+          </div>
+          <div id="8">
+            <Card
+              imageDimensions="/121118-nativeplants-bottlebrush.jpg"
+              componentTitle="Indigenous"
+              cardPosition="relative"
+              cardCursor="pointer"
+              cardBorder="none"
+              cardPadding="0"
+              cardBackgroundColor="transparent"
+              cardMargin="0 !important"
+              cardZIndex="2"
+              cardBoxShadow="0px 15px 30px black"
+              cardWidth="300px"
+              cardHeight="225px"
+              titleDisplay="inline-block"
+              onCardClick={onCard8Click}
             />
           </div>
         </div>
