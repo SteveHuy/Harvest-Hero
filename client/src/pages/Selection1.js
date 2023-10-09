@@ -65,7 +65,7 @@ const Selection1 = () => {
 
   const onCard2Click = () => {
     changeToBlack()
-    setSelectedValue('Nut/Seeds')
+    setSelectedValue('Nuts/Seeds')
     setSelectedCard(2)
 
   };
@@ -108,6 +108,10 @@ const Selection1 = () => {
 
     }
   };
+
+  const BackButton = () => {
+    navigate("/");
+  }
 
   return (
     <div className={styles.main}>
@@ -250,6 +254,20 @@ const Selection1 = () => {
             primaryButtonLeft="41.15%"
             primaryButtonDisplay="inline-block"
             onButtonClick={NextButton}
+          />
+                    <Button className = {styles.button}
+            buttonText="Back"
+            buttonPosition="absolute"
+            buttonCursor="pointer"
+            buttonBorder="none"
+            buttonPadding="0"
+            buttonBackgroundColor="transparent"
+            buttonLeft="-8%"
+            rectangleDivBackgroundColor="unset"
+            rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
+            primaryButtonLeft="40.77%"
+            primaryButtonDisplay="inline-block"
+            onButtonClick={BackButton}
           />
         </div>
       </div>

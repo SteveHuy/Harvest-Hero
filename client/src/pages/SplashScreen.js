@@ -5,10 +5,11 @@ import styles from "./SplashScreen.module.css";
 const SplashScreen = () => {
   const navigate = useNavigate();
 
-  const onButtonClick = useCallback(() => {
-    navigate("/selection1");
-  }, [navigate]);
+  const onButtonClick = () => {
+    navigate("/Selection1");
+  };
 
+ 
   return (
     <div className={styles.main}>
       <div className={styles.card}>

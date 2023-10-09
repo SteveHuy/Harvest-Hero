@@ -75,7 +75,7 @@ const Selection4 = () => {
 
 
   const NextButton = () => {
-    if (selectedValue != ""){
+    if (Number.isInteger(selectedValue)){
     setShade()
     navigate("/selection5");
     }

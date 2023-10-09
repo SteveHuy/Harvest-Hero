@@ -2,7 +2,6 @@ import { useCallback, useContext } from "react";
 import { GlobalContext } from '../GlobalContext';
 
 import { useNavigate } from "react-router-dom";
-import Card from "../components/Card";
 import Button from "../components/Button";
 import styles from "./Recipes.module.css";
 const Recipes = () => {
@@ -92,7 +91,7 @@ const Recipes = () => {
               buttonBorder="none"
               buttonPadding="0"
               buttonBackgroundColor="transparent"
-              buttonLeft="-37%"
+              buttonLeft="-29%"
               rectangleDivBackgroundColor="unset"
               rectangleDivBackground="linear-gradient(90deg, rgba(127, 202, 33, 0.8), #105200)"
               primaryButtonLeft="40.77%"

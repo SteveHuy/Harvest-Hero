@@ -78,7 +78,7 @@ const Selection5 = () => {
 
 
   const NextButton = () => {
-    if (selectedValue != ""){
+    if (Number.isInteger(selectedValue)){
     setWater()
     navigate("/you-can-grow");
     }

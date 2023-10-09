@@ -32,9 +32,14 @@
   display: flex;
   flex-direction: row;
   text-align: center;
-  font-size:large;
+  justify-content: center;
   gap: var(--gap-21xl);
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  background-color: rgba(206, 205, 205, 0.9); 
+  font-size: 20px;
 }
+
+
 .cardParent {
   top: 15%;
   position: absolute;

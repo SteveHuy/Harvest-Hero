@@ -48,8 +48,21 @@ const Result = () => {
             titleDisplay="inline-block"
           />
           <div className={styles.description}>
+          <div>
             {plantData.Desc}
+            </div>
+            <div>
+            {plantData.sun}
+            </div>
+            <div>
+            {plantData.rainfall}
+            </div>
+            <div>
+            {plantData.temperature}
+            </div>
           </div>
+
+
         </div>
         <Button
         buttonText="Recipes"
